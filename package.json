@@ -13,15 +13,12 @@
   "license": "ISC",
   "author": "",
   "type": "module",
-  "main": "index.js",
+  "main": "bin/gendiff.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "commander": "^14.0.0"
-  },
-  "bin": {
-    "gendiff": "bin/gendiff.js"
   },
   "devDependencies": {
     "@eslint/create-config": "^1.10.0",

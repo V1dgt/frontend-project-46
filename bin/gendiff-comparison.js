@@ -1,6 +1,9 @@
+import lodash from 'lodash'
+
+const { sortBy } = lodash
 export default function (file1, file2) {
   const allKeys = [...Object.keys(file1), ...Object.keys(file2)]
-  const sortedUniqueKeys = [...new Set(allKeys)].sort()
+  const sortedUniqueKeys = sortBy([...new Set(allKeys)])
   const comparison = (keys) => {
     const iter = (keys, acc) => {
       if (keys.length === 0) {

@@ -1,4 +1,4 @@
-name: lint and jest tests
+name: Lint and Test
 
 on: push
 
@@ -8,7 +8,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-      - name: make lint
+      
+      - name: Install dependencies
+        run: npm install
+
+      - name: run linter
         run: make lint
+
       - name: make lint
         run: npx jest

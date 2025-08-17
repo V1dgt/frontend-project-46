@@ -1,0 +1,13 @@
+name: lint and jest tests
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: make lint
+        run: make lint
+      - name: make lint
+        run: npx jest

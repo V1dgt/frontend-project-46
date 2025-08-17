@@ -13,12 +13,16 @@
   "license": "ISC",
   "author": "",
   "type": "module",
-  "main": "bin/gendiff.js",
+  "main": "./bin/gendiff.js",
+  "bin": {
+    "gendiff": "./bin/gendiff.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "commander": "^14.0.0",
+    "gendiff": "^1.0.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
@@ -26,6 +30,7 @@
     "@eslint/js": "^9.32.0",
     "@stylistic/eslint-plugin": "^5.2.2",
     "eslint": "^9.32.0",
-    "globals": "^16.3.0"
+    "globals": "^16.3.0",
+    "jest": "^29.7.0"
   }
 }

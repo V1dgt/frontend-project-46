@@ -3,7 +3,7 @@ name: lint and jest tests
 on: push
 
 jobs:
-  build:
+  tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

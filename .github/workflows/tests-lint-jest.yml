@@ -15,5 +15,5 @@ jobs:
       - name: run linter
         run: make lint
 
-      - name: make lint
+      - name: run jest
         run: npx jest

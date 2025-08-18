@@ -16,4 +16,4 @@ jobs:
         run: make lint
 
       - name: run jest
-        run: npx jest
+        run: npx jest --coverage

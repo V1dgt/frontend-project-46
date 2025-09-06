@@ -7,3 +7,5 @@
 [Asciinema №1](https://asciinema.org/a/z0F94rWSLwDG3AXdVhQiUBOLU)
 ### Asciinema 2:
 [Asciinema №2](https://asciinema.org/a/fjGLNMbV5qu9MWBnciuAYbNWb)
+### Asciinema 3:
+[Asciinema №3](https://asciinema.org/a/zY75cq07qJbVul6o5nQDt0DHO)

@@ -1,12 +1,12 @@
 import { fileURLToPath } from 'node:url'
 import path, { dirname } from 'node:path'
-import { gendiff } from '../bin/gendiff.js'
+import gendiff from '../src/index.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 const getFixturePath = filename => path.join(__dirname, '..', '__fixtures__', filename)
 
-test('gendiff json', () => {
+test('gendiff test json', () => {
   expect(gendiff(getFixturePath('file1.json'), getFixturePath('file2.json'))).toEqual(`{
     common: {
       + follow: false
@@ -20,7 +20,7 @@ test('gendiff json', () => {
         }
         setting6: {
             doge: {
-              - wow:
+              - wow: 
               + wow: so much
             }
             key: value
@@ -53,8 +53,8 @@ test('gendiff json', () => {
 }`)
 })
 
-test('gendiff yml', () => {
-  expect(gendiff(getFixturePath('file3.json'), getFixturePath('file4.json'))).toEqual(`{
+test('gendiff test yml', () => {
+  expect(gendiff(getFixturePath('file3.yml'), getFixturePath('file4.yml'))).toEqual(`{
     common: {
       + follow: false
         setting1: Value 1
@@ -67,7 +67,7 @@ test('gendiff yml', () => {
         }
         setting6: {
             doge: {
-              - wow:
+              - wow: 
               + wow: so much
             }
             key: value

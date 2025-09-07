@@ -2,11 +2,12 @@ import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
 import parseData from './parsers.js'
 import buildDiff from './compare.js'
-import stylish from './stylish.js'
+import stylish from './formatters/stylish.js'
+import plain from './formatters/plain.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-const gendiff = (filepath1, filepath2) => {
+const gendiff = (filepath1, filepath2, formatName) => {
   const convertPath = (value) => {
     if (value.startsWith('/')) return value
     return resolve(__dirname, '..', value)
@@ -16,7 +17,13 @@ const gendiff = (filepath1, filepath2) => {
   const file1 = parseData(path1)
   const file2 = parseData(path2)
   const diff = buildDiff(file1, file2)
-  return stylish(diff)
+
+  switch (formatName) {
+    case 'stylish':
+      return stylish(diff)
+    case 'plain':
+      return plain(diff)
+  }
 }
 
 export default gendiff

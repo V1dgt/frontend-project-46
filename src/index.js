@@ -4,6 +4,7 @@ import parseData from './parsers.js'
 import buildDiff from './compare.js'
 import stylish from './formatters/stylish.js'
 import plain from './formatters/plain.js'
+import json from './formatters/json.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -23,6 +24,8 @@ const gendiff = (filepath1, filepath2, formatName) => {
       return stylish(diff)
     case 'plain':
       return plain(diff)
+    case 'json':
+      return json(diff)
   }
 }
 

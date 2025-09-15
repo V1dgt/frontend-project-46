@@ -11,3 +11,5 @@
 [Asciinema №3](https://asciinema.org/a/zY75cq07qJbVul6o5nQDt0DHO)
 ### Asciinema 4:
 [Asciinema №4](https://asciinema.org/a/QkYuXW81tu7y0aNTW7LV1Zfd2)
+### Asciinema 5:
+[Asciinema №5](https://asciinema.org/a/XAUOdxWkfdnfkoMbLLnuJ07R4)

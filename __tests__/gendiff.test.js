@@ -129,3 +129,143 @@ Property 'group1.nest' was updated. From [complex value] to 'str'
 Property 'group2' was removed
 Property 'group3' was added with value: [complex value]`)
 })
+
+test('formatJson test json', () => {
+  expect(gendiff(getFixturePath('file1.json'), getFixturePath('file2.json'), 'json')).toEqual(`{
+  "key": "common",
+  "type": "nested",
+  "children": [
+    {
+      "key": "follow",
+      "type": "added",
+      "value": false
+    },
+    {
+      "key": "setting1",
+      "type": "unchanged",
+      "value": "Value 1"
+    },
+    {
+      "key": "setting2",
+      "type": "removed",
+      "value": 200
+    },
+    {
+      "key": "setting3",
+      "type": "changed",
+      "oldValue": true,
+      "newValue": null
+    },
+    {
+      "key": "setting4",
+      "type": "added",
+      "value": "blah blah"
+    },
+    {
+      "key": "setting5",
+      "type": "added",
+      "value": {
+        "key5": "value5"
+      }
+    },
+    {
+      "key": "setting6",
+      "type": "nested",
+      "children": [
+        {
+          "key": "doge",
+          "type": "nested",
+          "children": [
+            {
+              "key": "wow",
+              "type": "changed",
+              "oldValue": "",
+              "newValue": "so much"
+            }
+          ]
+        },
+        {
+          "key": "key",
+          "type": "unchanged",
+          "value": "value"
+        },
+        {
+          "key": "ops",
+          "type": "added",
+          "value": "vops"
+        }
+      ]
+    }
+  ]
+}`)
+})
+
+test('formatJson test yml', () => {
+  expect(gendiff(getFixturePath('file3.yml'), getFixturePath('file4.yml'), 'json')).toEqual(`{
+  "key": "common",
+  "type": "nested",
+  "children": [
+    {
+      "key": "follow",
+      "type": "added",
+      "value": false
+    },
+    {
+      "key": "setting1",
+      "type": "unchanged",
+      "value": "Value 1"
+    },
+    {
+      "key": "setting2",
+      "type": "removed",
+      "value": 200
+    },
+    {
+      "key": "setting3",
+      "type": "changed",
+      "oldValue": true,
+      "newValue": null
+    },
+    {
+      "key": "setting4",
+      "type": "added",
+      "value": "blah blah"
+    },
+    {
+      "key": "setting5",
+      "type": "added",
+      "value": {
+        "key5": "value5"
+      }
+    },
+    {
+      "key": "setting6",
+      "type": "nested",
+      "children": [
+        {
+          "key": "doge",
+          "type": "nested",
+          "children": [
+            {
+              "key": "wow",
+              "type": "changed",
+              "oldValue": "",
+              "newValue": "so much"
+            }
+          ]
+        },
+        {
+          "key": "key",
+          "type": "unchanged",
+          "value": "value"
+        },
+        {
+          "key": "ops",
+          "type": "added",
+          "value": "vops"
+        }
+      ]
+    }
+  ]
+}`)
+})

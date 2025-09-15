@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
 import parseData from './parsers.js'
-import buildDiff from './compare.js'
+import buildDiff from './buildDiff.js'
 import stylish from './formatters/stylish.js'
 import plain from './formatters/plain.js'
 import json from './formatters/json.js'

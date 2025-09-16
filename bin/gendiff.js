@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { program } from 'commander'
-import gendiff from '../src/index.js'
+import genDiff from '../src/index.js'
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   program
@@ -10,7 +10,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     .argument('<filepath2>')
     .option('-f, --format [type]', 'output format (default: "stylish")', 'stylish')
     .action((filepath1, filepath2, options) => {
-      const diff = gendiff(filepath1, filepath2, options.format)
+      const diff = genDiff(filepath1, filepath2, options.format)
       console.log(diff)
     })
 

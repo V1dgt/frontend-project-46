@@ -10,7 +10,8 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     .argument('<filepath2>')
     .option('-f, --format [type]', 'output format (default: "stylish")', 'stylish')
     .action((filepath1, filepath2, options) => {
-      genDiff(filepath1, filepath2, options.format)
+      const diff = genDiff(filepath1, filepath2, options.format)
+      console.log(diff)
     })
 
   program.parse()

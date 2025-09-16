@@ -8,7 +8,7 @@ import json from './formatters/json.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-const gendiff = (filepath1, filepath2, formatName) => {
+const genDiff = (filepath1, filepath2, formatName) => {
   const convertPath = (value) => {
     if (value.startsWith('/')) return value
     return resolve(__dirname, '..', value)
@@ -29,4 +29,4 @@ const gendiff = (filepath1, filepath2, formatName) => {
   }
 }
 
-export default gendiff
+export default genDiff

@@ -21,11 +21,11 @@ const genDiff = (filepath1, filepath2, formatName) => {
 
   switch (formatName) {
     case 'stylish':
-      return stylish(diff)
+      return console.log(stylish(diff))
     case 'plain':
-      return plain(diff)
+      return console.log(plain(diff))
     case 'json':
-      return json(diff)
+      return console.log(json(diff))
   }
 }
 

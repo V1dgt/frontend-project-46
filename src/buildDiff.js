@@ -5,6 +5,7 @@ const { sortBy, isObject } = lodash
 const buildDiff = (file1, file2) => {
   const allKeys = [...Object.keys(file1), ...Object.keys(file2)]
   const sortedUniqueKeys = sortBy([...new Set(allKeys)])
+
   return sortedUniqueKeys.map((key) => {
     if (!Object.prototype.hasOwnProperty.call(file2, key)) {
       return { key, type: 'removed', value: file1[key] }

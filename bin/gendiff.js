@@ -4,15 +4,12 @@ import genDiff from '../src/index.js'
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   program
-    .description('Compares two configuration files and shows a difference')
     .version('0.0.1')
-    .argument('<filepath1>')
-    .argument('<filepath2>')
+    .arguments('<filepath1> <filepath2>')
+    .description('Compares two configuration files and shows a difference')
     .option('-f, --format [type]', 'output format (default: "stylish")', 'stylish')
-    .action((filepath1, filepath2, options) => {
-      const diff = genDiff(filepath1, filepath2, options.format)
-      console.log(diff)
+    .action((path1, path2) => {
+      console.log(genDiff(path1, path2, program.opts().format))
     })
-
-  program.parse()
+    .parse(process.argv)
 }

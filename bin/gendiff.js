@@ -5,7 +5,7 @@ import genDiff from '../src/index.js'
 if (import.meta.url === `file://${process.argv[1]}`) {
   program
     .description('Compares two configuration files and shows a difference')
-    .version('0.0.1')
+    .version('0.1.1')
     .argument('<filepath1>')
     .argument('<filepath2>')
     .option('-f, --format [type]', 'output format (default: "stylish")', 'stylish')

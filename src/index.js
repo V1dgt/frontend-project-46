@@ -8,7 +8,7 @@ import json from './formatters/json.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-const genDiff = (filepath1, filepath2, formatName) => {
+const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const convertPath = (value) => {
     if (value.startsWith('/')) return value
     return resolve(__dirname, '..', value)

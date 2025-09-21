@@ -6,10 +6,14 @@ export default function (path) {
   const splitPath = path.split('.')
   const extension = splitPath[splitPath.length - 1]
 
-  if (extension === 'json') {
-    return JSON.parse(file)
-  }
-  else {
-    return yaml.load(file)
+  switch (extension) {
+    case 'json':
+      return JSON.parse(file)
+    case 'yaml':
+      return yaml.load(file)
+    case 'yml':
+      return yaml.load(file)
+    default:
+      throw new Error('Выбранные файлы имеют расширения, которые не поддерживается. Принимаются файлы в формате json или yaml:)')
   }
 }

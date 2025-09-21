@@ -26,6 +26,8 @@ const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
       return plain(diff)
     case 'json':
       return json(diff)
+    default:
+      throw new Error('Выбран неверный формат. Доступны форматы: stylish, plain, json:)')
   }
 }
 
